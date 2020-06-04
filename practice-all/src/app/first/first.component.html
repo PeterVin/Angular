@@ -1,0 +1,45 @@
+<div *ngIf="isCollapsed">
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>1st num</mat-label>
+    <input type="number" matInput placeholder="" [(ngModel)]="num1" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>2nd num</mat-label>
+    <input type="number" matInput placeholder="" [(ngModel)]="num2" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <br>
+  <button mat-raised-button color="primary" (click)="onSum()">Sum</button>
+  <br>
+  <p [ngStyle]="{ backgroundColor: getColor() }">{{ add }}</p>
+  <br>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Something</mat-label>
+    <input type="text" matInput placeholder="" [disabled]="!isChecked" [(ngModel)]="element" [ngModelOptions]="{standalone: true}" required minlength="3" maxlength="13">
+    <mat-hint *ngIf="elements.length >= 5">Nem vehető fel több érték!</mat-hint>
+  </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onAdd()" [disabled]="disabledAdd()">Add</button>
+  <br>
+  <mat-checkbox class="example-margin" (click)="onClick()" >Checked</mat-checkbox>    <br>
+    
+  <br />
+  <label>A tömb elemei: </label>
+  <span *ngFor="let e of elements; let isOdd = odd"
+  [ngClass]="{ purple: isOdd }">  <br>
+{{e}}
+</span>
+</form>
+<br><br><br><br>
+<h1>SECOND PAGE</h1> <br>
+<app-second
+  [elements]="elements"
+  (onAddClick)="handleOnAddClick($event)"
+></app-second>
+</div>
+<button mat-raised-button color="primary" (click)="onCollapse()">{{ collapseMessage }}</button>
+
+<br />
+<a routerLink="pokemons"><button  mat-raised-button color="primary">Pokemons</button></a><br />
+<a routerLink="dogs"><button  mat-raised-button color="primary">Show a dog</button></a>

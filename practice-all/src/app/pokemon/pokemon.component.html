@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+<p>count: {{ count }}</p>
+<!-- <div *ngFor="let p of pokemons; let i = index" (mouseover)="onIt()" (mouseout)="changeText=false">
+  <div *ngIf="i >= pokemons.length - 10" appGreen >
+    {{ p.name }}
+    {{p.url}} <i class="fas fa-trash" (click)="removeItem(p)"></i> 
+  </div>
+</div>
+<button mat-raised-button color="primary" (click)="removeAll()" >Delete all pokemon</button>
+<br />
+  <form class="example-form" (ngSubmit)="onSubmit()">
+    <div><mat-label>Create new Pokemon!</mat-label></div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Name:</mat-label>
+      <input type="text" matInput [(ngModel)]="name" name="name">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Url:</mat-label>
+      <input type="text" matInput [(ngModel)]="url" name="url" >
+    </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" class="btn btn-primary">Add pokemon</button>
+</form>
+ -->
+
+<a routerLink=""><button mat-raised-button color="primary" >Back</button></a>
+<div>
+  <table mat-table  [dataSource]="lastTenPokemon" class="mat-elevation-z8">
+    <ng-container  matColumnDef="name">
+      <th  mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    <ng-container matColumnDef="url">
+      <th mat-header-cell *matHeaderCellDef> Url </th>
+      <td mat-cell *matCellDef="let element"> {{element.url}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell style="width:10%;" *matCellDef="let element" ><i class="fas fa-trash" (click)="delete(element)"></i> </td>
+    </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> 
+<button mat-raised-button color="primary" (click)="removeAll()" >Delete all pokemon</button>
+<form class="example-form" (ngSubmit)="onSubmit()">
+  <div><mat-label>Create new Pokemon!</mat-label></div>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input type="text" matInput [(ngModel)]="name" name="name">
+  </mat-form-field>
+  <br>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Url:</mat-label>
+    <input type="url" matInput [(ngModel)]="url" name="url" >
+  </mat-form-field>
+<button mat-raised-button color="primary" type="submit" class="btn btn-primary">Add pokemon</button>
+</form>
+</div>
+
+<!-- <p *ngFor="let lp of lastTenPokemon">{{lp.name}}</p> -->
