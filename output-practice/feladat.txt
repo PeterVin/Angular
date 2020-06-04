@@ -1,0 +1,7 @@
+Hozz létre egy új projektet output-practice néven
+Készíts egy child komponenst
+A child komponenst hívd meg a az app komponensbe html fájljában
+A child komponensbe hozz létre egy outputot, amit majd tovább passzolsz az app komponensnek. simpleValue legyen a neve, a kezdőértéke 0. gombnyomásra ehhez az értékhez adódjon hozzá 10. amint megnyomjuk a gombot, az app komponens html oldalán írassuk ki az értéket.
+Az előzőhöz hasonlóan hozzunk létre egy input mezőt, text típussal. Az ide beírt értéket a mellete lévő gomb megnyomására küldjük fel az app komponensnek, aminek a html-jében írassuk ki az értéket.
+Végezd el ugyanezt a műveletet, csak checkbox legyen az input mező (nyilván más változónevet használva)
+Végezd el ezt a műveletet egy text input mezőn, ahol minden karakter leütése után felküldjük az értéket az app komponensnek és ki is íratjuk azt html oldalon.

@@ -1,0 +1,11 @@
+<!-- adatok felpasszolása a szülő komponensnek. Az EventEmitter értékét megkapja a ts oldalon írt metódus-->
+<app-child (simpleValue)="handleSimpleValue($event)" (writeValue)="handleWriteValue($event)" (checkValue)="handleCheckBox($event)" (writeChange)="handleChange($event)"></app-child>
+<!-- sima értékiírások-->
+<br>
+{{simpleValueeeee}}
+<br>
+{{writeValue}}
+<br>
+{{checkBoxValue}}
+<br>
+{{changeValue}}
