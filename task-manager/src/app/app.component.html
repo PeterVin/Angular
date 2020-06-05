@@ -1,0 +1,27 @@
+
+  {{ name }} {{ id }} {{ isImportant }}
+  
+  <button 
+    mat-raised-button
+    background-color = "blue"
+    color="deepblue"
+    type="submit"
+    (click)="gombnyomas()"
+  >Köszönjek neked?</button>
+  <button mat-icon-button>Proba</button>
+
+  <div>
+  <input [value]="first" [(ngModel)]="first">
+  <p>{{first}}</p>
+</div> <div>
+  <input [value]="second" [(ngModel)]="second">
+  <p>{{second}}</p>
+</div>
+<button class="btn btn-danger" (click)="onSum()">Count</button>
+
+<p>{{sumOfTwo}}</p>
+
+<input type="text" [(ngModel)]="input" [disabled]="!isAllowAdd"> 
+<input type="checkbox" id="name" (click)="toggleAllow()"> 
+<label for="name">Editable</label>
+{{bevitt(input)}}
