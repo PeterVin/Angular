@@ -1,0 +1,57 @@
+<body>
+
+<form id= food-form #form="ngForm" class='example'>
+    <br>
+    <mat-form-field>
+    <mat-label>Name: </mat-label><mat-label class="red" ></mat-label>
+    <input 
+    matInput 
+    type="text"
+    #input maxlength="15" 
+    minlength ="4" 
+    name="name"
+    [(ngModel)]="name"
+    #formName="ngModel"
+    required>
+    <mat-error *ngIf="formName.touched && !formName.valid">  
+     All fields are required! Min 4, Max 15 character! </mat-error>
+    </mat-form-field>
+    <br>
+  <mat-form-field>
+  <mat-label>Color: </mat-label>
+  <input matInput name="color" [(ngModel)]="color" />
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+  <mat-label>Calories: </mat-label>
+  <input matInput type="number" id="calories" name="calories" [(ngModel)]="calories" /> <br>
+  <mat-hint *ngIf="calories > 100" class="yellow">Too much calories </mat-hint>
+</mat-form-field>
+<br>
+    <mat-form-field>
+  <mat-label>Size: </mat-label><mat-label class="red"></mat-label>
+  <mat-select name="size"(change)="onChange($event)" [(ngModel)]="size" required>
+    <mat-option value= null disabled selected>Please choose a size!!!44!!444!!</mat-option>
+    <mat-option value="small">small</mat-option>
+    <mat-option value="medium">medium</mat-option>
+    <mat-option value="big">big</mat-option>
+  </mat-select>
+</mat-form-field>
+  <button mat-raised-button color="accent" [disabled]= "!formName.touched && !formName.valid || size == null" (click)="onSave()">
+    Save
+  </button>
+
+</form>
+<span *ngFor="let fruit of fruits">
+  <div *ngIf="isSaved" class="card">
+    <mat-card>
+    Name: {{ fruit.name }}<br />
+    Color: {{ fruit.color }}<br />
+    Calories: {{ fruit.calories }}<br />
+    Size: {{ fruit.size }} <br />
+    Id: {{ fruit.id }} <br />
+  </mat-card>
+  </div>
+</span>
+  
+</body>

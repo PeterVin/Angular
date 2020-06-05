@@ -1,0 +1,15 @@
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shims.css">
+<select class="combobox" id="combobox" (change)="onChange($event)"  >
+  <option value="" disabled selected>select</option>
+  <option  [(ngModel)]="animals" value="{{ animals }}" 
+     >  animals</option>
+  <option [(ngModel)]="fruits" value="{{ fruits }}" >fruits</option>
+</select>
+
+<div *ngFor="let a of array; let i = index;" [ngStyle]="{color: getColor(i)}">   {{ a }} <i *ngIf="array.length > 3" class="fas fa-trash" (click)="removeItem(a)"></i> </div>
+
+<div><input type="text" id= "input" [(ngModel)]="insert">
+<button style="background-color: turquoise; color: orange; font-weight: bold;" (click)="add()">Add</button>
+</div>

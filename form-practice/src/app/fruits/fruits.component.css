@@ -1,0 +1,30 @@
+.red {
+  color: red;
+}
+
+.yellow {
+  color: lightsalmon;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #bababa;
+  width: 30%;
+  border: 1px solid darkgrey;
+  margin: 5pt;
+}
+
+.example {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+mat-label {
+  color: black;
+}
+body {
+  background-color: white;
+}

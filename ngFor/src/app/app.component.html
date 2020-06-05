@@ -1,0 +1,20 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div
+  *ngFor="
+    let number of arr;
+    let i = index;
+    let isLast = last;
+    let isFirst = first;
+  "
+>
+  <span [ngStyle]="{ color: getColor(i) }" [ngClass]="{ bold: isFirst }">
+    {{ number }} <span *ngIf="isLast"> This is the last</span>
+  </span>
+</div>
+<input type="number" [(ngModel)]="insert">
+<button style="color: yellow;" (click)="add()">Add</button>
+<button style="color:blue" (click)="plus()">Plus2</button>
+<input type="checkbox" id="checkbox" [(ngModel)]="enable" (click)="enableEdit()">
+<label for="checkbox" (click)="enableEdit()">Editable</label> 
+
+

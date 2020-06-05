@@ -1,0 +1,29 @@
+<!-- <div class="tab">
+  <button (click)="onHome()">Home</button>
+  <button (click)="onDev()">Developer</button>
+  <button (click)="onEng()">Engineer</button>
+  <button (click)="onTeach()">Teacher</button>
+</div>
+ -->
+<!--  <nav mat-tab-nav-bar>
+  <a mat-tab-link label="Home"(click)="onHome()">Home</a>
+  <a mat-tab-link (click)="onDev()" label="Developer"> DEV</a>
+  <a mat-tab-link (click)="onEng()" label="Engineer">Eng</a>
+  <a mat-tab-link (click)="onTeach()" label="Teacher">TEa</a>
+   <mat-tab (click)="onDev()" label="Developer">  <button (click)="onDev()">Developer</button></mat-tab>
+  <mat-tab (click)="onEng()" label="Engineer">  <button (click)="onEng()">Engineer</button></mat-tab>
+  <mat-tab (click)="onTeach()" label="Teacher"> <button (click)="onTeach()">Teacher</button></mat-tab>
+</mat-tab-group> 
+</nav>
+<router-outlet></router-outlet> -->
+
+<nav mat-tab-nav-bar [backgroundColor]="background">
+  <a mat-tab-link
+  *ngFor="let link of navLinks"
+  [routerLink]="link.path"
+  routerLinkActive #rla="routerLinkActive"
+  [active]="activeLink == link.label">
+    {{ link.label }}
+  </a>
+</nav>
+<router-outlet></router-outlet>
